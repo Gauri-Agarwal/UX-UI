@@ -5507,7 +5507,7 @@ button.btn-floating {
  * Released under the MIT license
  * https://github.com/fians/Waves/blob/master/LICENSE
  */
-.waves-effect {
+ {
   position: relative;
   cursor: pointer;
   display: inline-block;
@@ -9404,4 +9404,8 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   stroke-width: 4;
   stroke-linecap: round;
   /*shape-rendering: crispEdges;*/
+}
+
+.wrapper {
+  display:flex; align-items:center; justify-content:center;
 }
