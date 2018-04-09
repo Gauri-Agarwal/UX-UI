@@ -2672,11 +2672,7 @@ video.responsive-video {
   height: auto;
 }
 
-img.responsive-img1
-{
-  width: 70%;
-  height: auto;
-}
+
 
 .pagination li {
   display: inline-block;
@@ -8316,19 +8312,10 @@ input[type=range]:focus::-ms-fill-upper {
   visibility: visible;
   -webkit-animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
           animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
-  -webkit-transition: opacity .3s,
- visibility 0s 1s,
- -webkit-transform .3s;
-  transition: opacity .3s,
- visibility 0s 1s,
- -webkit-transform .3s;
-  transition: opacity .3s,
- transform .3s,
- visibility 0s 1s;
-  transition: opacity .3s,
- transform .3s,
- visibility 0s 1s,
- -webkit-transform .3s;
+  -webkit-transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
+  transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, visibility 0s 1s;
+  transition: opacity .3s, transform .3s, visibility 0s 1s, -webkit-transform .3s;
 }
 
 .tap-target {
@@ -8381,19 +8368,10 @@ input[type=range]:focus::-ms-fill-upper {
 
 .tap-target-wave::after {
   visibility: hidden;
-  -webkit-transition: opacity .3s,
- visibility 0s,
- -webkit-transform .3s;
-  transition: opacity .3s,
- visibility 0s,
- -webkit-transform .3s;
-  transition: opacity .3s,
- transform .3s,
- visibility 0s;
-  transition: opacity .3s,
- transform .3s,
- visibility 0s,
- -webkit-transform .3s;
+  -webkit-transition: opacity .3s, visibility 0s, -webkit-transform .3s;
+  transition: opacity .3s, visibility 0s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, visibility 0s;
+  transition: opacity .3s, transform .3s, visibility 0s, -webkit-transform .3s;
   z-index: -1;
 }
 
@@ -9412,31 +9390,3 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   stroke-linecap: round;
   /*shape-rendering: crispEdges;*/
 }
-
-.material-icons-size{font-size:50px !important;     margin-top: 10px;}
-.footer_all{background:#fff;     padding: 30px 10px;}
-.btn1{    padding: 7px 17px;
-    font-size: 25px;
-    color: #fff;
-    border-radius: 31px; margin-bottom:15px;display:block;     margin-top: 10px;}
-	.border-right{border-right:1px solid #707070;}
-	.deg a{color: #fff;
-    padding: 11px 0px; width:100%;
-    border-radius: 32px;
-    font-size: 26px;}
-	.deg span{       font-size: 51px;
-    display: block;}
-	.voi_img{position:relative;}
-	.voi{    position: absolute;
-    width: 22%;
-    top: 66px;
-    right: 3px;}
-	.setting_icon{    margin-top: -30px;
-    display: block;
-    margin-right: 15px;}
-	.setting_div{    padding: 120px 0px;}
-	.setting_div div{font-weight: bold;
-    font-size: 49px;
-    padding: 12px 0px;
-}
-	
