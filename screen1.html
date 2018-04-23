@@ -11,20 +11,11 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
+
 <div class="normal">
   <nav class="" >
-    <!--  <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul> -->
-
-     <!--  <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul> -->
       <a href="index.html" class=""><i class="material-icons material-icons-size">menu</i></a>
-    
   </nav>
- 
-
 
   <div class="container">
     <div class="section center-align">
@@ -37,36 +28,33 @@
 	  <a href="pressure.html"; class="waves-effect light-green darken-1 btn1">Pressure</a>
 	  <a href="moisture.html"; class="waves-effect light-green darken-1 btn1">Humidity</a>
 	  </div>
-      <div class="col s4 center-align border-right deg"><a href="temperature.html"; class="waves-effect light-green darken-1"><span>97</span> deg F</a></div>
-      <div class="col s4 center-align deg"><a href="posture.html"; class="waves-effect light-green darken-1"><span>Good</span> Posture </a></div>
+      <div class="col s4 center-align border-right deg"><a href="temperature.html"; class="waves-effect light-green darken-1"><span><p id="output"></p></span> deg F</a></div>
+      <div class="col s4 center-align deg"><a href="posture.html"; class="waves-effect light-green darken-1"><span>Good</span>Posture</a></div>
     </div>
 	</div>
-  </div>
-
-
-
-<pre id="output"></pre>
-<script>
-    MySql.Execute(
-        "128.2.136.44",
-        " rpcs2018",
-        " rpcsbackend2018",
-        "Brace_DB",
-        "select * from personTable",
-        function (data) {
-        document.getElementById("output").innerHTML = JSON.stringify(data,null,2);
-    });
-</script>
-
- 
- 
-
+</div>
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-    <script src="https://mysqljs.com/mysql.js"></script>
+  <script src="https://mysqljs.com/mysql.js"></script>
+  <script>
+    MySql.Execute(
+        "128.2.136.44",
+        "rpcs2018",
+        "rpcsbackend2018",
+        "Brace_DB",
+        "select * from temperaturetable order by time DESC limit 1",
+        function (data) {
+          document.getElementById("output").innerHTML = data.Result[0].temperature;
+        });
+  </script>
+  <script>
+    function myFunction() {
+      location.reload();
+    }
+  </script>
 
   </body>
 </html>
