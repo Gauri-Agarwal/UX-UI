@@ -43,6 +43,22 @@
 	</div>
   </div>
 
+
+
+<pre id="output"></pre>
+<script>
+    MySql.Execute(
+        "128.2.136.44",
+        " rpcs2018",
+        " rpcsbackend2018",
+        "Brace_DB",
+        "select * from personTable",
+        function (data) {
+        document.getElementById("output").innerHTML = JSON.stringify(data,null,2);
+    });
+</script>
+
+ 
  
 
 
@@ -50,6 +66,7 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+    <script src="https://mysqljs.com/mysql.js"></script>
 
   </body>
 </html>
