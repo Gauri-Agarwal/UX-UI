@@ -233,14 +233,26 @@ new Chartist.Line('.ct-chart', data);</script> -->
     var pressureStringSplit = pressureString.split(",");
     var frontTableArray = [];
     var backTableArray = [];
+    var btLeft_temp = [];
+    var btRight_temp = [];
     for (var i = 0; i < pressureStringSplit.length; i++){
       var indexInLine = i%15;
       if (0 <= indexInLine && indexInLine <= 2){
-        backTableArray.push(pressureStringSplit[i]);
+        btLeft_temp.push(pressureStringSplit[i]);
+        // backTableArrayLeft.push(pressureStringSplit[i]);
       }else if (3 <= indexInLine && indexInLine <= 10){
         frontTableArray.push(pressureStringSplit[i]);
       }else {
-        backTableArray.push(pressureStringSplit[i]);
+        btRight_temp.push(pressureStringSplit[i]);
+        if (indexInLine == 14){
+          var concattedBtArray = btRight_temp.concat(btLeft_temp);
+          // console.log(concattedBtArray);
+          // console.log(backTableArray.concat(concattedBtArray));
+          if ( backTableArray instanceof Array )
+             backTableArray = backTableArray.concat( concattedBtArray );
+          btLeft_temp = [];
+          btRight_temp = [];
+        }
       }
     }
     frontTableArray_global = frontTableArray;
@@ -290,7 +302,7 @@ new Chartist.Line('.ct-chart', data);</script> -->
   function myFunction() {
     location.reload();
   }
-
-  setInterval(refreshPressureMap, 500);
+  refreshPressureMap();
+  // setInterval(refreshPressureMap, 500);
   // parsePressureString(example);
 </script>

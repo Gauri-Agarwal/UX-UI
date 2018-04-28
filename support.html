@@ -8,18 +8,22 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <div style="right:30px"><a onclick="goBack()"; style="color:black; margin-left: 20px"><i onclick="goBack()" class="material-icons">arrow_back</i></a></div>    
     </head>
     <body>
+      
+
       
       <div class="row">
         <div class="card" height = auto>
           <div class="card-image">
-            <img src="images/header.png">
              <a class="btn-floating halfway-fab btn-large waves-effect waves-light red"><img class="circle responsive-img" src = "images/1.jpg"></a>
              <span class = "card-title"><h2>Emily Wu</h2></span>
           </div>
           <div class="card-content">
             <p><h4>Support</h4></p>
+               
                 <div class="card-tabs">
                 <ul class="tabs tabs-fixed-width">
                 <li class="tab"><a href="#test4">FAQ</a></li>
@@ -30,12 +34,27 @@
                 <div class="card-content grey lighten-4">
                 <div id="test4">
                   <ul class="collapsible">
-                    <li>
+                    
+                     
+                     <li>
+                      <div class="collapsible-header"><i class="material-icons"></i>What is scoliosis?</div>
+                      <div class="collapsible-body"><span>
+                      <div class ="video-container">
+                        <iframe width="560" height="315" src="https://youtu.be/3yWt2nslpAw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                      </div>
+
+                      </span></div>
+                    </li>
+                     
+                     
+                     
+                     
+                     <li>
                       <div class="collapsible-header"><i class="material-icons"></i>How do I use the brace</div>
                       <div class="collapsible-body"><span>
-      <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/HbMzR6d-wdM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div></span></div>
+                          <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/HbMzR6d-wdM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                          </div></span></div>
                     </li>
                     <li>
                       <div class="collapsible-header"><i class="material-icons"></i>Does wearing a brace cure me?</div>
@@ -79,7 +98,7 @@
                        <iframe width="560" height="315" src="https://www.youtube.com/embed/K7cxptWHxVU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                       </div>
                       </sp
-
+                          </li>
 
                   </ul>
         
@@ -99,6 +118,11 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script>
+        function goBack() {
+            window.history.back();
+        }
+        </script>
     </body>
   </html>
   
