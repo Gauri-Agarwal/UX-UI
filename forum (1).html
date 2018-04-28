@@ -34,7 +34,7 @@
               <v-card color="blue-grey darken-2" class="white--text">
                 <v-card-title primary-title>
                   <div class="headline">What's a good shirt to wear over the EmBrace?</div>
-                  <div> - Posted by Amy </div>
+                  <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Posted by Amy </div>
                 </v-card-title>
                 <v-card-actions>
                   <v-btn flat dark>COMMENT</v-btn>
@@ -45,10 +45,12 @@
               <v-card color="cyan darken-2" class="white--text">
                 <v-card-title primary-title>
                   <div class="headline">Does anyone know how to check the battery?</div>
-                  <div> - Posted by Doug </div>
+                  <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Posted by Doug </div>
                 </v-card-title>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ message }}</p>
                 <v-card-actions>
                   <v-btn flat dark>COMMENT</v-btn>
+                  <input type="text" v-model="message">
                 </v-card-actions>
               </v-card>
             </v-flex>
@@ -56,7 +58,7 @@
               <v-card color="purple" class="white--text">
                 <v-card-title primary-title>
                   <div class="headline">Does anyone want to meet up in PA?</div>
-                  <div> - Posted by Tiff </div>
+                  <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Posted by Tiff </div>
                 </v-card-title>
                 <v-card-actions>
                   <v-btn flat dark>COMMENT</v-btn>
@@ -76,11 +78,13 @@
  <script>
    new Vue({
     el: '#app',
-    data () {
-      return {
-      }
+    			    data: {
+                    message: ''
+                    }
     }
-  })
- </script>
+  )
+
+		</script>
+ 
 </body>
 </html>
