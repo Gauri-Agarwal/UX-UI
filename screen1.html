@@ -28,8 +28,8 @@
 	  <a href="pressure.html"; class="waves-effect light-green darken-1 btn1">Pressure</a>
 	  <a href="moisture.html"; class="waves-effect light-green darken-1 btn1">Humidity</a>
 	  </div>
-      <div class="col s4 center-align border-right deg"><a href="temperature.html"; class="waves-effect light-green darken-1"><span><p id="output"></p></span> deg F</a></div>
-      <div class="col s4 center-align deg"><a href="posture.html"; class="waves-effect light-green darken-1"><span>Good</span>Posture</a></div>
+      <div class="col s4 center-align border-right deg"><a href="temperature.html"; class="waves-effect light-green darken-1"><span><p id="temperature"></p></span> deg F</a></div>
+      <div class="col s4 center-align deg"><a href="posture.html"; class="waves-effect light-green darken-1"><span><p id="angle"></p></span>Posture</a></div>
     </div>
 	</div>
 </div>
@@ -45,9 +45,10 @@
         "rpcs2018",
         "rpcsbackend2018",
         "Brace_DB",
-        "select * from temperaturetable order by time DESC limit 1",
+        "select * from patienttable order by id DESC limit 1",
         function (data) {
-          document.getElementById("output").innerHTML = data.Result[0].temperature;
+          document.getElementById("temperature").innerHTML = data.Result[0].temperature;
+          document.getElementById("angle").innerHTML = data.Result[0].angle + "°";
         });
   </script>
   <script>

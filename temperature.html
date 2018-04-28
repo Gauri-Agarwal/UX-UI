@@ -51,23 +51,40 @@ new Chartist.Line('.ct-chart', data);</script> -->
     <div class="card-content grey lighten-4">
       <div id="test4">
 		    <div class="ct-chart ct-perfect-fourth"></div>
-		    <script>var data = {
-		  // A labels array that can contain any sort of values
-		  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-		  // Our series array that contains series objects or in this case series data arrays
-		  series: [
-		    [5, 2, 4, 2, 0]
-		  ]
-		};
+        <script src="https://mysqljs.com/mysql.js"></script>
+		    <script>
 
-		// Create a new line chart object where as first parameter we pass in a selector
-		// that is resolving to our chart container element. The Second parameter
-		// is the actual data object.
-		new Chartist.Line('.ct-chart', data);</script>      	
+          var time = [];
+          var temperature = [];
+
+          MySql.Execute(
+            "128.2.136.44",
+            "rpcs2018",
+            "rpcsbackend2018",
+            "Brace_DB",
+            "select time, temperature from patienttable;",
+
+            function (data) {
+              for (var i = 0; i < data.Result.length; i++){
+                time.push(data.Result[i].time);
+                temperature.push(data.Result[i].temperature);
+              }       
+          });
+
+          var data = {
+      		  // A labels array that can contain any sort of values
+      		  labels: time,
+      		  // Our series array that contains series objects or in this case series data arrays
+      		  series: [
+      		    temperature
+      		  ]
+      		};
+
+      		// Create a new line chart object where as first parameter we pass in a selector
+      		// that is resolving to our chart container element. The Second parameter
+      		// is the actual data object.
+      		new Chartist.Line('.ct-chart', data);</script>      	
       </div>
     </div>
   </div>
-
-
-
-  </html>
+</html>
