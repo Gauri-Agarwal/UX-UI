@@ -68,7 +68,9 @@ new Chartist.Line('.ct-chart', data);</script> -->
               for (var i = 0; i < data.Result.length; i++){
                 time.push(data.Result[i].time);
                 temperature.push(data.Result[i].temperature);
-              }       
+              }
+              console.log(time)
+              console.log(temperature)
           });
 
           var data = {
